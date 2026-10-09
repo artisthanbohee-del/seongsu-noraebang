@@ -159,6 +159,16 @@ p { margin: 0 0 1em; }
 .price-note p { margin: 0; color: var(--muted); }
 .price-note strong { color: #fff; }
 
+/* ---------- 둘이 오실 때 ---------- */
+.date { background: radial-gradient(900px 420px at 90% 30%, rgba(255, 111, 181, .12), transparent 60%), var(--bg-2); }
+.date-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.date-photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 6px solid #fff; transform: rotate(-1.5deg); }
+.date-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.date-list { margin: 1.2em 0 1.4em; }
+.date-list > div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.date-list dt { color: var(--yellow); font-weight: 700; }
+.date-list dd { margin: 0; color: var(--muted); }
+
 /* ---------- 둘러보기 ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 26px; }
 .chip {
@@ -193,7 +203,17 @@ p { margin: 0 0 1em; }
 .info-table small { color: var(--muted); font-size: .88rem; }
 .big-link { font-size: 1.35rem; font-weight: 900; color: #fff; text-decoration: none; }
 
+/* ---------- 자주 묻는 질문 ---------- */
+.faq { background: var(--bg-2); }
+.faq-list { margin-top: 28px; display: grid; gap: 12px; max-width: 52em; }
+.faq-list details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 0 22px; }
+.faq-list summary { cursor: pointer; font-weight: 700; padding: 18px 0; list-style-position: inside; }
+.faq-list summary:hover { color: var(--yellow); }
+.faq-list details[open] summary { color: var(--yellow); }
+.faq-list details p { color: var(--muted); margin: 0 0 18px; }
+
 /* ---------- 오시는 길 ---------- */
+.map-sub { color: var(--muted); font-size: 1.05rem; }
 .map { background: radial-gradient(900px 400px at 10% 90%, rgba(79, 227, 255, .1), transparent 60%), var(--bg); }
 .map-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .steps { padding-left: 1.3em; margin: 1.2em 0; }
@@ -247,7 +267,9 @@ p { margin: 0 0 1em; }
   .hero { min-height: 88vh; }
   .hero-copy { padding-bottom: 48px; }
   .hero-cta .btn { flex: 1 1 100%; }
-  .story-grid, .map-grid { grid-template-columns: 1fr; }
+  .story-grid, .map-grid, .date-grid { grid-template-columns: 1fr; }
+  .date-list > div { grid-template-columns: 1fr; gap: 2px; }
+  .date .map-btns .btn { flex: 1 1 100%; }
   .point-list, .room-cards, .review-list { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 8px; }
   .info-table > div { grid-template-columns: 1fr; gap: 4px; }
