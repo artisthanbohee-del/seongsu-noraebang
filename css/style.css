@@ -1,0 +1,274 @@
+/* 뚝섬 노래방 — 레트로 네온 간판 톤
+   색: 간판의 파랑(남색) · 빨강 글씨 · 노랑 '대형룸완비' · 전구빛 */
+:root {
+  --bg: #0b0d2e;
+  --bg-2: #12164a;
+  --card: #171c58;
+  --line: rgba(255, 255, 255, .12);
+  --text: #f4f1ff;
+  --muted: #c4c2e6;
+  --red: #ff3d5a;
+  --pink: #ff6fb5;
+  --yellow: #ffd23f;
+  --cyan: #4fe3ff;
+  --bulb: #ffe7a8;
+  --radius: 18px;
+  --wrap: 1160px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .45);
+  font-size: 18px; /* 큰 글씨 기본 */
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans KR", system-ui, -apple-system, "Malgun Gothic", sans-serif;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--yellow); }
+h1, h2, h3 { line-height: 1.3; margin: 0 0 .5em; }
+h2 { font-family: "Black Han Sans", "Noto Sans KR", sans-serif; font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.6rem); letter-spacing: -.01em; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; z-index: 100; background: var(--yellow); color: #000; padding: 8px 14px; border-radius: 8px; }
+
+/* ---------- 버튼 ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+  min-height: 52px; padding: 0 1.3em; border-radius: 999px;
+  font-weight: 700; text-decoration: none; font-size: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible, .chip:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.btn-call { background: var(--red); color: #fff; box-shadow: 0 0 0 0 rgba(255, 61, 90, .6), 0 8px 24px rgba(255, 61, 90, .35); }
+.btn-call:hover { box-shadow: 0 0 22px rgba(255, 61, 90, .7); }
+.btn-ghost { color: var(--text); border: 2px solid rgba(255, 255, 255, .55); background: rgba(11, 13, 46, .35); backdrop-filter: blur(4px); }
+.btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); }
+.btn-lg { min-height: 60px; font-size: 1.1rem; padding: 0 1.6em; }
+
+/* ---------- 머리글 ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11, 13, 46, .88); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; gap: 24px; min-height: 72px; }
+.logo { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; margin: 0; }
+.logo-small {
+  writing-mode: vertical-rl; font-family: "Black Han Sans", sans-serif;
+  background: var(--yellow); color: var(--red); font-size: .95rem; padding: 4px 3px; border-radius: 4px; line-height: 1.05;
+}
+.logo-big {
+  font-family: "Black Han Sans", sans-serif; font-size: 1.75rem; color: #fff; line-height: 1;
+  text-shadow: 0 0 6px var(--red), 0 0 16px var(--red);
+}
+.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.nav a:hover { color: #fff; }
+.header-call { min-height: 44px; font-size: .95rem; }
+
+/* ---------- 첫 화면 ---------- */
+.hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: flex-end; overflow: hidden; }
+.hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 13, 46, .25) 0%, rgba(11, 13, 46, .35) 40%, rgba(11, 13, 46, .95) 100%),
+    linear-gradient(90deg, rgba(11, 13, 46, .75) 0%, rgba(11, 13, 46, 0) 65%);
+}
+.hero-copy { position: relative; padding-top: 120px; padding-bottom: 72px; width: 100%; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5em; padding: .35em 1em; border-radius: 999px;
+  border: 1.5px solid var(--bulb); color: var(--bulb); font-weight: 700; background: rgba(0, 0, 0, .35);
+  box-shadow: 0 0 14px rgba(255, 231, 168, .35);
+}
+.neon-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--bulb); box-shadow: 0 0 10px var(--bulb); animation: blink 2.4s infinite; }
+.hero-title { margin: .4em 0 .3em; }
+.t-small { display: block; font-size: clamp(1.3rem, 3.2vw, 2rem); font-weight: 700; color: var(--muted); }
+.t-neon {
+  display: block; font-family: "Black Han Sans", sans-serif; font-weight: 400;
+  font-size: clamp(3.2rem, 11vw, 7.4rem); color: #fff; letter-spacing: -.01em;
+  text-shadow: 0 0 4px #fff, 0 0 12px var(--pink), 0 0 28px var(--red), 0 0 60px var(--red);
+  animation: flicker 6s infinite;
+}
+.hero-lead { font-size: clamp(1.1rem, 2.4vw, 1.35rem); max-width: 34em; color: #fff; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.4em 0 1.2em; }
+.hero-facts { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); }
+.hero-facts b { color: var(--yellow); margin-right: .35em; }
+.hero-en { margin-top: .8em; font-size: .85rem; color: rgba(244, 241, 255, .6); }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: .55; }
+}
+
+/* ---------- 공통 구역 ---------- */
+.section { padding: clamp(64px, 9vw, 112px) 0; }
+.eyebrow { color: var(--cyan); font-weight: 700; letter-spacing: .08em; margin-bottom: .4em; }
+.section-lead { color: var(--muted); max-width: 40em; }
+
+/* ---------- 우리 가게 이야기 ---------- */
+.story { background: radial-gradient(1200px 500px at 85% 20%, rgba(255, 111, 181, .12), transparent 60%), var(--bg); }
+.story-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.story-text p { color: var(--muted); font-size: 1.05rem; }
+.story-text strong { color: #fff; }
+.pull {
+  margin: 1.6em 0 0; padding: 1.1em 1.3em; border-left: 4px solid var(--yellow);
+  background: rgba(255, 210, 63, .07); border-radius: 0 12px 12px 0; font-size: 1.1rem; color: #fff;
+}
+.pull cite { display: block; margin-top: .5em; font-style: normal; font-size: .85rem; color: var(--muted); }
+.story-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 14px; }
+.ph { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.ph img { width: 100%; height: 100%; object-fit: cover; }
+.ph-a { grid-column: 1 / 2; grid-row: 1 / 2; aspect-ratio: 1; transform: rotate(-2deg); border: 6px solid #fff; }
+.ph-b { grid-column: 2 / 3; grid-row: 1 / 3; aspect-ratio: 3 / 4; align-self: center; }
+.ph-c { grid-column: 1 / 2; grid-row: 2 / 3; aspect-ratio: 4 / 3; }
+
+/* ---------- 자랑거리 ---------- */
+.points { padding-top: 0; padding-bottom: 24px; }
+.point-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.point { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; }
+.point-ico { font-size: 2rem; display: block; margin-bottom: .4em; }
+.point h3 { color: var(--yellow); }
+.point p { color: var(--muted); margin: 0; font-size: .98rem; }
+
+/* ---------- 방 안내 ---------- */
+.rooms { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.room-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
+.room-card { background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; }
+.room-card img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.room-body { padding: 20px 22px 24px; }
+.room-body p { color: var(--muted); margin: 0; }
+.tag { display: inline-block; font-size: .8rem; font-weight: 700; color: #000; background: var(--cyan); padding: .1em .7em; border-radius: 999px; margin-bottom: .6em; }
+.price-note {
+  margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  padding: 26px 28px; border-radius: var(--radius);
+  border: 2px dashed rgba(255, 210, 63, .55); background: rgba(255, 210, 63, .06);
+}
+.price-note h3 { color: var(--yellow); }
+.price-note p { margin: 0; color: var(--muted); }
+.price-note strong { color: #fff; }
+
+/* ---------- 둘러보기 ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 26px; }
+.chip {
+  font: inherit; font-size: .95rem; font-weight: 700; min-height: 44px; padding: 0 1.1em; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--muted); border: 1.5px solid var(--line);
+}
+.chip:hover { color: #fff; border-color: rgba(255, 255, 255, .4); }
+.chip.is-on { background: var(--pink); color: #1a0620; border-color: var(--pink); }
+.grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; grid-auto-flow: dense; gap: 12px; }
+.grid li { border-radius: 14px; overflow: hidden; background: var(--card); }
+.grid li.wide { grid-column: span 2; }
+.grid li[hidden] { display: none; }
+.grid a { display: block; height: 100%; }
+.grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease, filter .35s; }
+.grid a:hover img { transform: scale(1.05); filter: brightness(1.1); }
+
+/* ---------- 후기 ---------- */
+.reviews { background: var(--bg-2); }
+.review-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.review { margin: 0; background: var(--card); border-radius: var(--radius); padding: 26px 24px; border: 1px solid var(--line); position: relative; }
+.review::before { content: "“"; position: absolute; top: -6px; left: 18px; font-size: 4rem; line-height: 1; color: var(--pink); font-family: Georgia, serif; }
+.review blockquote { margin: 18px 0 14px; font-size: 1.08rem; }
+.review figcaption { font-size: .85rem; color: var(--muted); }
+.review figcaption a { margin-left: .4em; }
+.more-reviews { margin-top: 26px; }
+
+/* ---------- 이용 안내 ---------- */
+.info-table { margin: 28px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+.info-table > div { display: grid; grid-template-columns: 8em 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.info-table dt { color: var(--yellow); font-weight: 700; }
+.info-table dd { margin: 0; }
+.info-table small { color: var(--muted); font-size: .88rem; }
+.big-link { font-size: 1.35rem; font-weight: 900; color: #fff; text-decoration: none; }
+
+/* ---------- 오시는 길 ---------- */
+.map { background: radial-gradient(900px 400px at 10% 90%, rgba(79, 227, 255, .1), transparent 60%), var(--bg); }
+.map-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.steps { padding-left: 1.3em; margin: 1.2em 0; }
+.steps li { margin-bottom: .7em; color: var(--muted); }
+.steps b { color: #fff; }
+.tip { color: var(--bulb); }
+.map-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.map-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); aspect-ratio: 4 / 3.2; background: var(--card); }
+.map-frame iframe { width: 100%; height: 100%; border: 0; }
+
+/* ---------- 바닥글 ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 40px 0 120px; color: var(--muted); font-size: .92rem; }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+.logo-foot { margin-bottom: .8em; }
+.copy { margin: 0; }
+
+/* ---------- 휴대폰 고정 버튼 ---------- */
+.mobile-bar { display: none; }
+
+/* ---------- 사진 크게 보기 ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; background: rgba(5, 6, 22, .94);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 20px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: min(92vw, 1100px); max-height: 80vh; border-radius: 12px; box-shadow: var(--shadow); }
+.lb-cap { margin-top: 14px; color: var(--muted); text-align: center; max-width: 40em; }
+.lightbox button {
+  position: absolute; background: rgba(255, 255, 255, .12); color: #fff; border: 0; cursor: pointer;
+  width: 56px; height: 56px; border-radius: 50%; font-size: 2rem; line-height: 1;
+}
+.lightbox button:hover { background: rgba(255, 255, 255, .25); }
+.lb-close { top: 18px; right: 18px; font-size: 1.4rem !important; }
+.lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 980px) {
+  .nav { display: none; }
+  .header-call { margin-left: auto; }
+  .point-list { grid-template-columns: repeat(2, 1fr); }
+  .room-cards, .review-list { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; }
+  .info-table { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  :root { font-size: 17px; }
+  .wrap { padding: 0 16px; }
+  .header-inner { min-height: 62px; }
+  .header-call { display: none; }
+  .hero { min-height: 88vh; }
+  .hero-copy { padding-bottom: 48px; }
+  .hero-cta .btn { flex: 1 1 100%; }
+  .story-grid, .map-grid { grid-template-columns: 1fr; }
+  .point-list, .room-cards, .review-list { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 8px; }
+  .info-table > div { grid-template-columns: 1fr; gap: 4px; }
+  .price-note .btn { width: 100%; }
+  .mobile-bar {
+    display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: rgba(11, 13, 46, .96); border-top: 1px solid var(--line); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); gap: 8px;
+  }
+  .mobile-bar a {
+    display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 14px;
+    font-weight: 900; font-size: 1.1rem; text-decoration: none; color: #fff; background: var(--card); border: 1px solid var(--line);
+  }
+  .mobile-bar a:first-child { background: var(--red); border-color: var(--red); }
+  .lb-prev, .lb-next { top: auto; bottom: 18px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .t-neon, .neon-dot { animation: none; }
+  .btn, .grid img { transition: none; }
+}
+
+/* 시설 아이콘 */
+.facility { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.facility li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: .2em .9em; font-size: .95rem; }
