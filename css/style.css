@@ -167,7 +167,26 @@ p { margin: 0 0 1em; }
 
 /* ---------- 둘이 오실 때 ---------- */
 .date { background: radial-gradient(900px 420px at 90% 30%, rgba(255, 111, 181, .12), transparent 60%), var(--bg-2); }
-.date-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.date-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); align-items: start; margin-top: 28px; }
+.date-media { min-width: 0; }
+.date-film { margin: 0; }
+.date-player { position: relative; max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: var(--radius); background: #000; box-shadow: var(--shadow); }
+.date-player video { display: block; width: 100%; height: 100%; border-radius: inherit; object-fit: contain; }
+.date-player video:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.date-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: .5em; width: 100%; border: 0; border-radius: inherit; background: rgba(0, 0, 0, .12); color: #fff; font: inherit; font-weight: 700; cursor: pointer; text-shadow: 0 2px 5px #000; }
+.date-play[hidden] { display: none; }
+.date-play span { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--bg); color: var(--yellow); border: 2px solid var(--yellow); text-shadow: none; }
+.date-play:hover { background: rgba(0, 0, 0, .25); }
+.date-film figcaption { margin-top: 16px; color: var(--muted); font-size: .85rem; }
+.date-video-status { color: var(--yellow); font-size: .9rem; margin-top: 12px; }
+.date-video-status:empty { display: none; }
+.date-media .map-btns { margin-top: 18px; }
+.date-media .map-btns .btn { flex: 1 1 auto; }
+.date-credits { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
+.date-credits h3 { color: var(--text); font-size: 1rem; }
+.date-credits summary { cursor: pointer; padding: 10px 0; }
+.date-credits summary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.date-text .date-list { margin-top: 0; }
 .date-photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 6px solid #fff; transform: rotate(-1.5deg); }
 .date-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .date-list { margin: 1.2em 0 1.4em; }

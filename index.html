@@ -220,26 +220,54 @@
 
   <!-- ⑤ 둘이 오실 때 -->
   <section class="section date" id="date">
-    <div class="wrap date-grid">
-      <figure class="date-photo">
-        <img src="img/room-cozy-sm.webp" srcset="img/room-cozy-sm.webp 600w, img/room-cozy.webp 1200w" sizes="(max-width:700px) 100vw, 45vw"
-             alt="둘이 쓰기 좋은 아늑한 소형룸. 가죽 소파와 큰 화면의 반주기" loading="lazy">
-      </figure>
-      <div class="date-text">
-        <p class="eyebrow">둘이 오실 때</p>
-        <h2>성수동 데이트,<br>둘이 즐기는 룸 노래방</h2>
-        <p class="section-lead">성수 노래방 데이트를 찾는다면, 둘이서 편하게 쓰는 소형룸이 있습니다. 코인노래방 부스보다 넓은 방에서 날씨 걱정 없이 즐기는 성수 실내 데이트로 들러 보세요.</p>
-        <dl class="date-list">
-          <div><dt>둘이 쓰는 방</dt><dd>소형룸이 5개 있어 1~2인도 이용할 수 있어요. 오시기 전에 전화로 빈방을 확인하면 기다리지 않아요.</dd></div>
-          <div><dt>요금</dt><dd>일반실 1시간 30,000원. 연장 요금은 전화로 알려 드립니다.</dd></div>
-          <div><dt>예약</dt><dd>전화 <a href="tel:050713712917">0507-1371-2917</a>로 받습니다.</dd></div>
-          <div><dt>영업시간</dt><dd>매일 오후 4시 ~ 새벽 3시. 명절·휴무는 전화로 확인해 주세요.</dd></div>
-          <div><dt>찾아오는 길</dt><dd>성덕정19길 1 마트 건물의 파란 간판 아래, 불 밝힌 계단을 따라 지하로 내려오세요. 저녁 간판 앞은 레트로 사진 찍기 좋은 자리예요.</dd></div>
-        </dl>
-        <div class="map-btns">
-          <a class="btn btn-call" href="tel:050713712917">📞 둘이 쓸 방 물어보기</a>
-          <a class="btn btn-ghost" href="#map">📍 오시는 길</a>
+    <div class="wrap">
+      <p class="eyebrow">둘이 오실 때</p>
+      <h2>성수동 데이트,<br>둘이 즐기는 룸 노래방</h2>
+      <p class="section-lead">성수 노래방 데이트를 찾는다면, 둘이서 편하게 쓰는 소형룸이 있습니다. 코인노래방 부스보다 넓은 방에서 날씨 걱정 없이 즐기는 성수 실내 데이트로 들러 보세요.</p>
+      <div class="date-grid">
+        <div class="date-media">
+          <figure class="date-film">
+            <div class="date-player">
+              <video id="date-video" controls muted playsinline preload="none" width="1080" height="1920"
+                     poster="media/seongsu-date-v4-poster.jpg" data-src="media/seongsu-date-v4.mp4"
+                     aria-label="성수동 데이트코스 소개 영상" aria-describedby="date-video-caption" tabindex="0"></video>
+              <button class="date-play" id="date-play" type="button" aria-controls="date-video" hidden>
+                <span aria-hidden="true">▶</span> 30초 영상 보기
+              </button>
+            </div>
+            <figcaption id="date-video-caption">뚝섬 노래방 홍보 · 사진으로 만든 30초 코스 소개<br>서울숲 산책 → 커피 → 룸 노래방. 처음에는 소리 없이 재생되며, 소리는 재생바에서 켤 수 있어요.</figcaption>
+          </figure>
+          <p class="date-video-status" id="date-video-status" role="status"></p>
+          <noscript><p><a href="media/seongsu-date-v4.mp4">성수동 데이트코스 영상 파일 열기</a> (30초 · 소리 재생 가능)</p></noscript>
+          <div class="map-btns">
+            <a class="btn btn-call" href="tel:050713712917">📞 둘이 쓸 방 물어보기</a>
+            <a class="btn btn-ghost" href="#map">📍 오시는 길</a>
+          </div>
         </div>
+        <div class="date-text">
+          <dl class="date-list">
+            <div><dt>둘이 쓰는 방</dt><dd>소형룸이 5개 있어 1~2인도 이용할 수 있어요. 방문 전에 전화로 빈방과 이용 가능 시간을 확인해 주세요.</dd></div>
+            <div><dt>요금</dt><dd>일반실 1시간 30,000원. 연장 요금은 전화로 알려 드립니다.</dd></div>
+            <div><dt>예약</dt><dd>전화 <a href="tel:050713712917">0507-1371-2917</a>로 받습니다.</dd></div>
+            <div><dt>영업시간</dt><dd>매일 오후 4시 ~ 새벽 3시. 명절·휴무는 전화로 확인해 주세요.</dd></div>
+            <div><dt>찾아오는 길</dt><dd>성덕정19길 1 마트 건물의 파란 간판 아래, 불 밝힌 계단을 따라 지하로 내려오세요. 저녁 간판 앞은 레트로 사진 찍기 좋은 자리예요.</dd></div>
+          </dl>
+          <figure class="date-photo">
+            <img src="img/room-cozy-sm.webp" srcset="img/room-cozy-sm.webp 600w, img/room-cozy.webp 1200w" sizes="(max-width:700px) 100vw, 45vw"
+                 alt="둘이 쓰기 좋은 아늑한 소형룸. 가죽 소파와 큰 화면의 반주기" loading="lazy">
+          </figure>
+        </div>
+      </div>
+      <div class="date-credits" aria-labelledby="date-credits-h">
+        <h3 id="date-credits-h">영상 출처와 이용 안내</h3>
+        <p>서울숲 사진: <a href="https://commons.wikimedia.org/wiki/File:Seoulforest_path01.jpg" target="_blank" rel="noopener">Seoulforest path01.jpg · Enigma7seven</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. 세로 크롭·색 보정·확대·이동·자막 합성을 적용했습니다. 2009년 11월 26일 촬영한 자료사진으로, 현재 현장 상태를 나타내지 않습니다. 해당 사진을 각색한 서울숲 장면과 본 제작자의 창작 기여분은 CC BY-SA 3.0 조건으로 제공합니다. 제3자 매장 사진의 권리는 이 허락에 포함되지 않습니다.</p>
+        <p>커피 사진: <a href="https://unsplash.com/photos/three-white-ceramic-mugs-vbt-Fp3b5FA" target="_blank" rel="noopener">Three white ceramic mugs · Nathan Dumlao / Unsplash</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash License</a>. 세로 크롭·확대·이동·자막 합성을 적용했습니다. 대림창고에서 촬영한 사진이 아니며, 소개 매장 간 제휴를 의미하지 않습니다.</p>
+        <details>
+          <summary>매장 사진·음악·글꼴 및 전체 출처</summary>
+          <p>매장 사진: <a href="https://blog.naver.com/everyeatt/223438102473" target="_blank" rel="noopener">everyeatt 블로그</a> · <a href="https://blog.naver.com/sed016/223441388468" target="_blank" rel="noopener">sed016 블로그</a>의 기존 로컬 보관본. 세로 크롭·색 보정·확대·이동·자막 합성을 적용했습니다. 외부 광고 재사용 허락은 별도 확인이 필요합니다.</p>
+          <p>음악: 로컬에서 직접 합성한 100BPM 반주(기존 음원·타인 녹음 샘플 미사용). 글꼴: <a href="https://github.com/google/fonts/tree/main/ofl/notosanskr" target="_blank" rel="noopener">Noto Sans KR · SIL Open Font License</a>.</p>
+          <p><a href="media/seongsu-date-v4-sources.txt">v4 원본 출처 문서 보기</a></p>
+        </details>
       </div>
     </div>
   </section>
