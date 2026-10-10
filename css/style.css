@@ -182,10 +182,6 @@ p { margin: 0 0 1em; }
 .date-video-status:empty { display: none; }
 .date-media .map-btns { margin-top: 18px; }
 .date-media .map-btns .btn { flex: 1 1 auto; }
-.date-credits { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
-.date-credits h3 { color: var(--text); font-size: 1rem; }
-.date-credits summary { cursor: pointer; padding: 10px 0; }
-.date-credits summary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
 .date-text .date-list { margin-top: 0; }
 .date-photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 6px solid #fff; transform: rotate(-1.5deg); }
 .date-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
