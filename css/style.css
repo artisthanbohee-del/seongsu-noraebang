@@ -250,6 +250,9 @@ p { margin: 0 0 1em; }
 .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
 .logo-foot { margin-bottom: .8em; }
 .copy { margin: 0; }
+.footer-credits { margin-top: 18px; margin-bottom: 0; font-size: .75rem; }
+.footer-credits a { color: #aaa; text-decoration: none; }
+.footer-credits a:hover, .footer-credits a:focus-visible { text-decoration: underline; }
 
 /* ---------- 휴대폰 고정 버튼 ---------- */
 .mobile-bar { display: none; }
