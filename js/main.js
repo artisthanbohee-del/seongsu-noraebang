@@ -11,7 +11,7 @@
     play.addEventListener('click', function () {
       videoStatus.textContent = '';
       if (!video.getAttribute('src')) video.src = video.dataset.src;
-      video.muted = true;
+      video.muted = false;
       video.controls = true;
       video.tabIndex = 0;
       play.hidden = true;
